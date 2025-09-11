@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <div>
+      <div><h2>회원가입 하세요</h2></div>
+      <div>
+        <h3>기본정보입력</h3>
+        <form action="#">
+          <div>
+            <div><label>이름 <input type="text"></label></div>
+            <div><label>이메일<input type="email"></label></div>
+            <div><label>비밀번호<input type="password"></label></div>
+            <div><label>통신사
+              <select name="" id="">
+                <option value="SKT">SKT</option>
+                <option value="KT">KT</option>
+                <option value="LG">LG</option>
+              </select>
+            </label></div>
+
+            <div><label>전화번호 <input type="tel"></label></div>
+          </div>
+          <div>
+            <label
+              >생년월일:
+              <input type="date" />
+            </label>
+          </div>  
+          <div>
+            <label>성별
+              <input
+                type="radio"
+                id="radio1"
+                name="gender"
+                value="male"
+              />남성</label
+            >
+            <label>
+              <input
+                type="radio"
+                id="radio2"
+                name="gender"
+                value="female"
+              />여성</label
+            >
+          </div>
+          <div>
+            <label><h4>이용약관</h4><textarea name="terms_of_Service" cols="30" rows="5" readonly>약관어쩌고</textarea>
+            <input type="checkbox" name="terms_of_Service_check" >동의 합니다.</label>
+
+          </div>
+          <div>
+            <input type="submit" value="가입하기" />
+          </div>
+        </form>
+    
+  </body>
+</html>
