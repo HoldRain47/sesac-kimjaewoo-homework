@@ -1,10 +1,30 @@
+console.log(`===============TODO: 배열 합계 계산기`);
 // TODO: 배열 합계 계산기
 // 숫자 배열을 인자로 받아 원소 중 양수의 합을 반환하는 함수를 구현한다
 // 함수명: sumPositiveNumbers (함수 선언식), sumPositiveNumbersArrow (화살표 함수)
 
 // 함수 선언식 정의 코드
+function sumPositiveNumbers(num) {
+  let count_sum = 0;
+  num.forEach((count) => {
+    if (count > 0) {
+      count_sum += count;
+    }
+  });
+  return count_sum;
+}
 
 // 화살표 함수 정의 코드
+
+const sumPositiveNumbersArrow = (num) => {
+  let count_sum = 0;
+  num.forEach((count) => {
+    if (count > 0) {
+      count_sum += count;
+    }
+  });
+  return count_sum;
+};
 
 // 함수 호출 코드
 let numbers3 = [1, -2, 3, -4, 5, 6];
@@ -19,15 +39,32 @@ console.log(result8);
 15
 110
 */
-
+console.log(`===============TODO: 배열에서 짝수만 찾기`);
 // TODO: 배열에서 짝수만 찾기
 // 숫자 배열을 인자로 받아 짝수만 담은 새로운 배열을 반환하는 함수를 구현한다
 // 함수명: getEvenNumbers (함수 선언식), getEvenNumbersArrow (화살표 함수)
 
 // 함수 선언식 정의 코드
-
+function getEvenNumbers(numbers) {
+  let new_num_arr = [];
+  numbers.forEach((num) => {
+    if (num % 2 === 0) {
+      new_num_arr.push(num);
+    }
+  });
+  return new_num_arr;
+}
 // 화살표 함수 정의 코드
 
+const getEvenNumbersArrow = (numbers) => {
+  let new_num_arr = [];
+  numbers.forEach((num) => {
+    if (num % 2 === 0) {
+      new_num_arr.push(num);
+    }
+  });
+  return new_num_arr;
+};
 // 함수 호출 코드
 let numbers1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 let result1 = getEvenNumbers(numbers1);
@@ -41,14 +78,27 @@ console.log(result2);
 [2, 4, 6, 8, 10]
 [22, 44]
 */
-
+console.log(`===============TODO: 학생 성적 분석`);
 // TODO: 학생 성적 분석
 // 학생 객체 배열을 인자로 받아 점수(score)가 80점 이상인 학생들의 이름(name)만 담은 배열로 반환하는 함수를 구현한다
 // 함수명: getHighScoreStudents (함수 선언식), getHighScoreStudentsArrow (화살표 함수)
 
 // 함수 선언식 정의 코드
-
+function getHighScoreStudents(Students) {
+  let new_Students = [];
+  Students.forEach((Student) => {
+    if (Student["score"] > 80) new_Students.push(Student["name"]);
+  });
+  return new_Students;
+}
 // 화살표 함수 정의 코드
+const getHighScoreStudentsArrow = (Students) => {
+  let new_Students = [];
+  Students.forEach((Student) => {
+    if (Student["score"] > 80) new_Students.push(Student["name"]);
+  });
+  return new_Students;
+};
 
 // 함수 호출 코드
 let students1 = [
@@ -73,13 +123,28 @@ console.log(result4);
 ["홍길동", "장영실"]
 */
 
+console.log(`===============TODO: 상품 재고 관리`);
 // TODO: 상품 재고 관리
 // 상품 객체 배열을 인자로 받아 재고(stock)가 10개 미만인 상품들의 이름(name)만 담은 배열로 반환하는 함수를 구현한다
 // 함수명: getLowStockProducts (함수 선언식), getLowStockProductsArrow (화살표 함수)
 
 // 함수 선언식 정의 코드
-
+function getLowStockProducts(products) {
+  let new_products = [];
+  products.forEach((product) => {
+    if (product["stock"] < 10) new_products.push(product["name"]);
+  });
+  return new_products;
+}
 // 화살표 함수 정의 코드
+
+const getLowStockProductsArrow = (products) => {
+  let new_products = [];
+  products.forEach((product) => {
+    if (product["stock"] < 10) new_products.push(product["name"]);
+  });
+  return new_products;
+};
 
 // 함수 호출 코드
 let products1 = [
@@ -103,15 +168,27 @@ console.log(result6);
 ["노트북", "키보드"]
 ["스마트폰", "이어폰"]
 */
-
+console.log(`===============TODO: 도시별 인구 통계`);
 // TODO: 도시별 인구 통계
 // 도시 객체 배열을 인자로 받아 인구수(population)의 합을 반환하는 함수를 구현한다
 // 함수명: getTotalPopulation (함수 선언식), getTotalPopulationArrow (화살표 함수)
 
 // 함수 선언식 정의 코드
-
+function getTotalPopulation(cities) {
+  let population_con = 0;
+  cities.forEach((city) => {
+    population_con += city["population"];
+  });
+  return population_con;
+}
 // 화살표 함수 정의 코드
-
+const getTotalPopulationArrow = (cities) => {
+  let population_con = 0;
+  cities.forEach((city) => {
+    population_con += city["population"];
+  });
+  return population_con;
+};
 // 함수 호출 코드
 let cities1 = [
   { name: "서울", population: 9700000 },
@@ -135,16 +212,33 @@ console.log(result10);
 15780000
 6170000
 */
-
+console.log(`===============TODO: 단어 길이 필터링`);
 // TODO: 단어 길이 필터링
 // 문자열 배열을 인자로 받아 배열 원소 문자열의 길이가 5글자 이상인 문자열들만 담은 배열을 반환하는 함수를 구현한다
 // 문자열 길이 : 문자열변수.length
 // 함수명: getLongWords (함수 선언식), getLongWordsArrow (화살표 함수)
 
 // 함수 선언식 정의 코드
-
+function getLongWords(words) {
+  let new_words = [];
+  words.forEach((word) => {
+    if (word.length >= 5) {
+      new_words.push(word);
+    }
+  });
+  return new_words;
+}
 // 화살표 함수 정의 코드
 
+const getLongWordsArrow = (words) => {
+  let new_words = [];
+  words.forEach((word) => {
+    if (word.length >= 5) {
+      new_words.push(word);
+    }
+  });
+  return new_words;
+};
 // 함수 호출 코드
 let words1 = ["apple", "cat", "elephant", "dog", "computer"];
 let result11 = getLongWords(words1);
@@ -158,7 +252,7 @@ console.log(result12);
 ["apple", "elephant", "computer"]
 ["javascript", "react"]
 */
-
+console.log(`===============TODO: 조건부 배열 변환`);
 // TODO: 조건부 배열 변환
 // 숫자 배열을 인자로 받아 각 원소를 다음 규칙으로 변환한 배열을 반환하는 함수를 구현한다
 // - 원래 값이 짝수인 경우 2를 곱한다
@@ -167,9 +261,25 @@ console.log(result12);
 // 함수명: transformNumbers (함수 선언식), transformNumbersArrow (화살표 함수)
 
 // 함수 선언식 정의 코드
-
+function transformNumbers(nums) {
+  let new_nums = [];
+  nums.forEach((num) => {
+    if (num > 10) new_nums.push(num);
+    else if (num % 2 === 0) new_nums.push(num * 2);
+    else if (num % 2 === 1) new_nums.push(num + 3);
+  });
+  return new_nums;
+}
 // 화살표 함수 정의 코드
-
+const transformNumbersArrow = (nums) => {
+  let new_nums = [];
+  nums.forEach((num) => {
+    if (num > 10) new_nums.push(num);
+    else if (num % 2 === 0) new_nums.push(num * 2);
+    else if (num % 2 === 1) new_nums.push(num + 3);
+  });
+  return new_nums;
+};
 // 함수 호출 코드
 let numbers6 = [1, 2, 3, 4, 5, 15, 20];
 let result17 = transformNumbers(numbers6);
@@ -183,58 +293,99 @@ console.log(result18);
 [4, 4, 6, 8, 8, 15, 20]
 [12, 10, 16, 12, 12, 25]
 */
+console.log(`===============TODO: 성적 등급 분류`);
+// // TODO: 성적 등급 분류
+// // 학생 객체 배열을 인자로 받아 등급별로 분류한 객체를 반환하는 함수를 구현한다
+// // 등급 기준: A(90이상), B(80이상), C(70이상), D(70미만)
+// // 반환 객체 구조: { A: [학생이름들], B: [학생이름들], C: [학생이름들], D: [학생이름들] }
+// // 학생 객체 구조: { name: "이름", score: 점수 }
+// // 함수명: classifyStudentsByGrade (함수 선언식), classifyStudentsByGradeArrow (화살표 함수)
 
-// TODO: 성적 등급 분류
-// 학생 객체 배열을 인자로 받아 등급별로 분류한 객체를 반환하는 함수를 구현한다
-// 등급 기준: A(90이상), B(80이상), C(70이상), D(70미만)
-// 반환 객체 구조: { A: [학생이름들], B: [학생이름들], C: [학생이름들], D: [학생이름들] }
-// 학생 객체 구조: { name: "이름", score: 점수 }
-// 함수명: classifyStudentsByGrade (함수 선언식), classifyStudentsByGradeArrow (화살표 함수)
+// // 함수 선언식 정의 코드
+// function classifyStudentsByGrade(students) {
+//   let student_obj = { A: [], B: [], C: [], D: [] };
+//   students.forEach((student) => {
+//     if (student["score"] >= 90) student_obj["A"].push();
+//     else if (student["score"] >= 80) student_obj["B"];
+//     else if (student["score"] >= 70) student_obj["C"];
+//     else student_obj["D"];
+//   });
+//   return student_obj;
+// }
+// // 화살표 함수 정의 코드
 
-// 함수 선언식 정의 코드
+// // 함수 호출 코드
+// let students3 = [
+//   { name: "김철수", score: 95 },
+//   { name: "이영희", score: 87 },
+//   { name: "박민수", score: 76 },
+//   { name: "최지영", score: 65 },
+//   { name: "홍길동", score: 92 },
+// ];
+// let result13 = classifyStudentsByGrade(students3);
+// console.log(result13);
 
-// 화살표 함수 정의 코드
-
-// 함수 호출 코드
-let students3 = [
-  { name: "김철수", score: 95 },
-  { name: "이영희", score: 87 },
-  { name: "박민수", score: 76 },
-  { name: "최지영", score: 65 },
-  { name: "홍길동", score: 92 },
-];
-let result13 = classifyStudentsByGrade(students3);
-console.log(result13);
-
-let students4 = [
-  { name: "김영수", score: 88 },
-  { name: "이민정", score: 72 },
-  { name: "박준호", score: 94 },
-];
-let result14 = classifyStudentsByGradeArrow(students4);
-console.log(result14);
+// let students4 = [
+//   { name: "김영수", score: 88 },
+//   { name: "이민정", score: 72 },
+//   { name: "박준호", score: 94 },
+// ];
+// let result14 = classifyStudentsByGradeArrow(students4);
+// console.log(result14);
 
 /* 출력 결과
 { A: ["김철수", "홍길동"], B: ["이영희"], C: ["박민수"], D: ["최지영"] }
 { A: ["박준호"], B: ["김영수"], C: ["이민정"], D: [] }
 */
-
+console.log(`===============TODO: 배열 요소 개수 세기`);
 // TODO: 배열 요소 개수 세기
 // 배열을 인자로 받아 각 요소가 몇 번 나타나는지 세어서 객체로 반환하는 함수를 구현한다
 // 함수명: countElements (함수 선언식), countElementsArrow (화살표 함수)
 
 // 함수 선언식 정의 코드
-
+function countElements(fruits) {
+  let fruits_arr = { apple: 0, banana: 0, orange: 0 };
+  let student_obj = { A: [], B: [], C: [], D: [] };
+  let apple_con = 0;
+  let orange_con = 0;
+  let banana_con = 0;
+  fruits.forEach((fruit) => {
+    if (fruit === "apple") apple_con++;
+    else if (fruit === "orange") orange_con++;
+    else if (fruit === "banana") banana_con++;
+  });
+  fruits_arr["apple"] = apple_con;
+  fruits_arr["banana"] = banana_con;
+  fruits_arr["orange"] = orange_con;
+  return fruits_arr;
+}
 // 화살표 함수 정의 코드
+
+function countElements(fruits) {
+  let fruits_arr = { apple: 0, banana: 0, orange: 0 };
+  let student_obj = { A: [], B: [], C: [], D: [] };
+  let apple_con = 0;
+  let orange_con = 0;
+  let banana_con = 0;
+  fruits.forEach((fruit) => {
+    if (fruit === "apple") apple_con++;
+    else if (fruit === "orange") orange_con++;
+    else if (fruit === "banana") banana_con++;
+  });
+  fruits_arr["apple"] = apple_con;
+  fruits_arr["banana"] = banana_con;
+  fruits_arr["orange"] = orange_con;
+  return fruits_arr;
+}
 
 // 함수 호출 코드
 let fruits1 = ["apple", "banana", "apple", "orange", "banana", "apple"];
 let result15 = countElements(fruits1);
 console.log(result15);
 
-let numbers5 = [1, 2, 3, 2, 1, 3, 1, 4];
-let result16 = countElementsArrow(numbers5);
-console.log(result16);
+// let numbers5 = [1, 2, 3, 2, 1, 3, 1, 4];
+// let result16 = countElementsArrow(numbers5);
+// console.log(result16);
 
 /* 출력 결과
 { apple: 3, banana: 2, orange: 1 }
