@@ -42,7 +42,9 @@ const originTodos = [
 let highPriorityTodos;
 
 /* 로직 코드 작성 */
-
+highPriorityTodos = originTodos.filter((todo) => {
+  if (todo["priority"] === HIGH_PRIORITY) return todo;
+});
 // 출력 코드
 console.log(highPriorityTodos);
 
@@ -58,7 +60,9 @@ console.log(highPriorityTodos);
 let incompleteTodos;
 
 /* 로직 코드 작성 */
-
+incompleteTodos = originTodos.filter((todo) => {
+  if (todo["completed"] === IS_NOT_COMPLETED) return todo;
+});
 // 출력 코드
 console.log(incompleteTodos);
 
@@ -75,9 +79,21 @@ console.log(incompleteTodos);
 // 우선순위 표시: HIGH_PRIORITY → "[긴급]", MEDIUM_PRIORITY → "[보통]", LOW_PRIORITY → "[낮음]"
 
 let todosWithPriorityLabels;
+function replace(priority) {
+  if (priority === HIGH_PRIORITY) {
+    return `긴급`;
+  } else if (priority === MEDIUM_PRIORITY) {
+    return `보통`;
+  } else if (priority === LOW_PRIORITY) {
+    return `낮음`;
+  }
+}
 
 /* 로직 코드 작성 */
-
+todosWithPriorityLabels = originTodos;
+todosWithPriorityLabels.forEach((todo) => {
+  todo["text"] = `[${replace(todo["priority"])}] 할 일 ${todo["id"]}`;
+});
 // 출력 코드
 console.log(todosWithPriorityLabels);
 
@@ -91,98 +107,98 @@ console.log(todosWithPriorityLabels);
 ]
 */
 
-// TODO: 특정 ID 할 일 찾기
-// originTodos 배열에서 ID가 3인 할 일 찾기
-let todoById3;
+// // TODO: 특정 ID 할 일 찾기
+// // originTodos 배열에서 ID가 3인 할 일 찾기
+// let todoById3;
 
-/* 로직 코드 작성 */
+// /* 로직 코드 작성 */
 
-// 출력 코드
-console.log("ID 3인 할 일:", todoById3);
+// // 출력 코드
+// console.log("ID 3인 할 일:", todoById3);
 
-// ID가 10인 할 일 찾기 (존재하지 않음)
-let todoById10;
+// // ID가 10인 할 일 찾기 (존재하지 않음)
+// let todoById10;
 
-/* 로직 코드 작성 */
+// /* 로직 코드 작성 */
 
-// 출력 코드
-console.log("ID 10인 할 일:", todoById10);
+// // 출력 코드
+// console.log("ID 10인 할 일:", todoById10);
 
-/* 출력 결과
-ID 3인 할 일: { id: 3, text: '할 일 3', completed: false, priority: 2 }
-ID 10인 할 일: undefined
-*/
+// /* 출력 결과
+// ID 3인 할 일: { id: 3, text: '할 일 3', completed: false, priority: 2 }
+// ID 10인 할 일: undefined
+// */
 
-// TODO: 모든 할 일이 완료되었는지 확인
-// originTodos 배열의 모든 할 일이 완료되었는지(completed가 true인지) 확인하기
-let allTodosCompleted;
+// // TODO: 모든 할 일이 완료되었는지 확인
+// // originTodos 배열의 모든 할 일이 완료되었는지(completed가 true인지) 확인하기
+// let allTodosCompleted;
 
-/* 로직 코드 작성 */
+// /* 로직 코드 작성 */
 
-// 출력 코드
-console.log("모든 할 일 완료 여부:", allTodosCompleted);
+// // 출력 코드
+// console.log("모든 할 일 완료 여부:", allTodosCompleted);
 
-/* 출력 결과
-모든 할 일 완료 여부: false
-*/
+// /* 출력 결과
+// 모든 할 일 완료 여부: false
+// */
 
-// TODO: 긴급한 할 일이 있는지 확인
-// originTodos 배열에서 높은 우선순위(HIGH_PRIORITY)이면서 완료되지 않은 할 일이 하나라도 있는지 확인하기
-let hasUrgentTodos;
+// // TODO: 긴급한 할 일이 있는지 확인
+// // originTodos 배열에서 높은 우선순위(HIGH_PRIORITY)이면서 완료되지 않은 할 일이 하나라도 있는지 확인하기
+// let hasUrgentTodos;
 
-/* 로직 코드 작성 */
+// /* 로직 코드 작성 */
 
-// 출력 코드
-console.log("긴급한 할 일 존재 여부:", hasUrgentTodos);
+// // 출력 코드
+// console.log("긴급한 할 일 존재 여부:", hasUrgentTodos);
 
-/* 출력 결과
-긴급한 할 일 존재 여부: true
-*/
+// /* 출력 결과
+// 긴급한 할 일 존재 여부: true
+// */
 
-// TODO: 완료된 할 일 개수 계산
-// originTodos 배열에서 완료된 할 일(completed가 true인)의 개수 계산하기
-let completedCount;
+// // TODO: 완료된 할 일 개수 계산
+// // originTodos 배열에서 완료된 할 일(completed가 true인)의 개수 계산하기
+// let completedCount;
 
-/* 로직 코드 작성 */
+// /* 로직 코드 작성 */
 
-// 출력 코드
-console.log("완료된 할 일 개수:", completedCount);
+// // 출력 코드
+// console.log("완료된 할 일 개수:", completedCount);
 
-/* 출력 결과
-완료된 할 일 개수: 2
-*/
+// /* 출력 결과
+// 완료된 할 일 개수: 2
+// */
 
-// TODO: 복합 조건 필터링
-// originTodos 배열에서 완료되지 않고 중간 우선순위(MEDIUM_PRIORITY) 이상인 할 일 필터링하기
-let importantIncompleteTodos;
+// // TODO: 복합 조건 필터링
+// // originTodos 배열에서 완료되지 않고 중간 우선순위(MEDIUM_PRIORITY) 이상인 할 일 필터링하기
+// let importantIncompleteTodos;
 
-/* 로직 코드 작성 */
+// /* 로직 코드 작성 */
 
-// 출력 코드
-console.log(importantIncompleteTodos);
+// // 출력 코드
+// console.log(importantIncompleteTodos);
 
-/* 출력 결과
-[
-  { id: 2, text: '할 일 2', completed: false, priority: 1 },
-  { id: 5, text: '할 일 5', completed: false, priority: 0 }
-]
-*/
+// /* 출력 결과
+// [
+//   { id: 2, text: '할 일 2', completed: false, priority: 1 },
+//   { id: 5, text: '할 일 5', completed: false, priority: 0 }
+// ]
+// */
 
-// TODO: 우선순위 정렬
-// originTodos 배열을 우선순위(priority) 순서대로 정렬하기
-let sortedTodos;
+// // TODO: 우선순위 정렬
+// // originTodos 배열을 우선순위(priority) 순서대로 정렬하기
+// let sortedTodos;
 
-/* 로직 코드 작성 */
+// /* 로직 코드 작성 */
 
-// 출력 코드
-console.log(sortedTodos);
+// // 출력 코드
+// console.log(sortedTodos);
 
-/* 출력 결과
-[
-  { id: 1, text: '할 일 1', completed: true, priority: 0 },
-  { id: 5, text: '할 일 5', completed: false, priority: 0 },
-  { id: 2, text: '할 일 2', completed: false, priority: 1 },
-  { id: 4, text: '할 일 4', completed: true, priority: 1 },
-  { id: 3, text: '할 일 3', completed: false, priority: 2 }
-]
-*/
+// /* 출력 결과
+// [
+//   { id: 1, text: '할 일 1', completed: true, priority: 0 },
+//   { id: 5, text: '할 일 5', completed: false, priority: 0 },
+//   { id: 2, text: '할 일 2', completed: false, priority: 1 },
+//   { id: 4, text: '할 일 4', completed: true, priority: 1 },
+//   { id: 3, text: '할 일 3', completed: false, priority: 2 }
+// ]
+// */
